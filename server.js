@@ -19,13 +19,14 @@ app.use((req, res, next) => {
 	});
 	next();
 });/* express middleware teaches express how to do stuff */
-
+/*
 app.use((req, res, next) => {
 	res.render('maintenance.hbs', {
 		pageTitle: 'Maintenance Page',
 		maintainMessage: 'We are under construction'
 	})
 })
+*/
 
 
 app.use(express.static(__dirname + '/public'));
@@ -40,6 +41,12 @@ app.get('/', (req, res) => {
 	res.render('home', {
 		pageTitle: 'Home Page',
 		welcomeMessage: 'Welcome to Home Page'
+	});
+});
+
+app.get('/project', (req, res) => {
+	res.render('project.hbs', {
+		pageTitle: 'Project Page'	
 	});
 });
 
